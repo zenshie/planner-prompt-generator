@@ -1,3 +1,13 @@
+// ============================================================
+// PLANNER PROMPT STUDIO
+// Planner Intelligence Engine
+// ============================================================
+
+
+// ============================================================
+// DROPDOWN OPTIONS
+// ============================================================
+
 const options = {
 
     productFormat: [
@@ -560,9 +570,614 @@ const options = {
 };
 
 
-// ------------------------------
-// CREATE DROPDOWNS
-// ------------------------------
+// ============================================================
+// PLANNER INTELLIGENCE
+// ============================================================
+
+const plannerIntelligence = {
+
+    "Sunday Reset Planner": {
+        sections: [
+            "Weekly reflection",
+            "Upcoming week priorities",
+            "Schedule overview",
+            "Home reset checklist",
+            "Meal planning",
+            "Self-care check-in",
+            "Habit check-in",
+            "Weekly intention"
+        ],
+        prompts: [
+            "What went well this week?",
+            "What needs attention next week?",
+            "What are my three most important priorities?",
+            "What can I prepare today to make next week easier?"
+        ]
+    },
+
+    "Fitness Planner": {
+        sections: [
+            "Weekly movement goals",
+            "Workout planning",
+            "Exercise tracking",
+            "Hydration tracker",
+            "Recovery check-in",
+            "Energy level",
+            "Progress reflection"
+        ],
+        prompts: [
+            "What movement do I want to prioritize?",
+            "How did my energy feel?",
+            "What felt good during my workouts?",
+            "What can I improve next week?"
+        ]
+    },
+
+    "Wellness Planner": {
+        sections: [
+            "Wellness check-in",
+            "Sleep tracking",
+            "Hydration",
+            "Movement",
+            "Nutrition check-in",
+            "Mood tracking",
+            "Self-care priorities"
+        ],
+        prompts: [
+            "How am I feeling today?",
+            "What does my body need?",
+            "What small wellness habit can I prioritize?"
+        ]
+    },
+
+    "Self-Care Planner": {
+        sections: [
+            "Self-care priorities",
+            "Mood check-in",
+            "Rest and recovery",
+            "Personal care checklist",
+            "Joyful activities",
+            "Reflection space"
+        ],
+        prompts: [
+            "What do I need more of?",
+            "What can I do today just for myself?",
+            "What would help me feel more rested?"
+        ]
+    },
+
+    "Productivity Planner": {
+        sections: [
+            "Top priorities",
+            "Task list",
+            "Time blocking",
+            "Important deadlines",
+            "Quick wins",
+            "Distraction check",
+            "End-of-day reflection"
+        ],
+        prompts: [
+            "What are the three most important tasks?",
+            "What can wait?",
+            "What would make today feel productive?"
+        ]
+    },
+
+    "Goal-Setting Planner": {
+        sections: [
+            "Main goal",
+            "Why this goal matters",
+            "Milestones",
+            "Action steps",
+            "Progress tracker",
+            "Obstacles",
+            "Next action"
+        ],
+        prompts: [
+            "Why is this goal important?",
+            "What is the next achievable step?",
+            "What could get in the way?",
+            "How will I know I am making progress?"
+        ]
+    },
+
+    "Habit Tracker": {
+        sections: [
+            "Habit list",
+            "Habit tracking grid",
+            "Daily check-in",
+            "Streak tracking",
+            "Weekly reflection",
+            "Progress notes"
+        ],
+        prompts: [
+            "Which habits matter most right now?",
+            "What made this habit easier or harder?",
+            "What adjustment can I make?"
+        ]
+    },
+
+    "Meal Planner": {
+        sections: [
+            "Weekly meal plan",
+            "Breakfast",
+            "Lunch",
+            "Dinner",
+            "Snacks",
+            "Grocery list",
+            "Meal preparation checklist"
+        ],
+        prompts: [
+            "What meals need preparation?",
+            "What ingredients are already available?",
+            "What should be added to the grocery list?"
+        ]
+    },
+
+    "Budget Planner": {
+        sections: [
+            "Income",
+            "Essential expenses",
+            "Discretionary spending",
+            "Upcoming bills",
+            "Savings goal",
+            "Spending tracker",
+            "Financial priorities"
+        ],
+        prompts: [
+            "What are my most important expenses?",
+            "What bills are coming up?",
+            "What is my savings priority?",
+            "Where can I be more intentional with spending?"
+        ]
+    },
+
+    "Finance Planner": {
+        sections: [
+            "Income overview",
+            "Expenses",
+            "Savings",
+            "Debt payments",
+            "Financial goals",
+            "Upcoming payments",
+            "Money reflection"
+        ],
+        prompts: [
+            "What is my main financial priority?",
+            "What payment needs attention?",
+            "What financial habit do I want to improve?"
+        ]
+    },
+
+    "Cleaning Planner": {
+        sections: [
+            "Cleaning priorities",
+            "Room-by-room checklist",
+            "Deep-clean tasks",
+            "Quick cleaning tasks",
+            "Laundry",
+            "Supplies checklist",
+            "Completed tasks"
+        ],
+        prompts: [
+            "Which area needs the most attention?",
+            "What can be completed quickly?",
+            "Which task should be scheduled next?"
+        ]
+    },
+
+    "Home Management Planner": {
+        sections: [
+            "Household tasks",
+            "Cleaning",
+            "Errands",
+            "Shopping list",
+            "Appointments",
+            "Maintenance",
+            "Family priorities"
+        ],
+        prompts: [
+            "What needs attention around the home?",
+            "Which errands should be grouped together?",
+            "What household task should be handled first?"
+        ]
+    },
+
+    "Study Planner": {
+        sections: [
+            "Study goals",
+            "Subjects",
+            "Assignments",
+            "Study schedule",
+            "Exam preparation",
+            "Focus sessions",
+            "Review notes"
+        ],
+        prompts: [
+            "What should I study first?",
+            "What assignment has the closest deadline?",
+            "What topic needs additional review?"
+        ]
+    },
+
+    "Student Planner": {
+        sections: [
+            "Classes",
+            "Assignments",
+            "Deadlines",
+            "Study tasks",
+            "Important reminders",
+            "Goals",
+            "Weekly reflection"
+        ],
+        prompts: [
+            "What school task needs attention first?",
+            "What deadline is approaching?",
+            "What do I want to accomplish this week?"
+        ]
+    },
+
+    "Business Planner": {
+        sections: [
+            "Business priorities",
+            "Tasks",
+            "Sales goals",
+            "Customer follow-ups",
+            "Marketing activities",
+            "Important deadlines",
+            "Business reflection"
+        ],
+        prompts: [
+            "What business activity has the highest priority?",
+            "Which customer or lead needs follow-up?",
+            "What action could move the business forward?"
+        ]
+    },
+
+    "Content Planner": {
+        sections: [
+            "Content goals",
+            "Content ideas",
+            "Publishing schedule",
+            "Platforms",
+            "Content formats",
+            "Calls to action",
+            "Performance notes"
+        ],
+        prompts: [
+            "What content should be created first?",
+            "What audience problem can this content solve?",
+            "What should be published next?"
+        ]
+    },
+
+    "Social Media Planner": {
+        sections: [
+            "Content calendar",
+            "Post ideas",
+            "Platforms",
+            "Captions",
+            "Visual ideas",
+            "Engagement tasks",
+            "Performance tracking"
+        ],
+        prompts: [
+            "What is the main message?",
+            "Who is this post for?",
+            "What action should the audience take?"
+        ]
+    },
+
+    "Project Planner": {
+        sections: [
+            "Project goal",
+            "Milestones",
+            "Tasks",
+            "Deadlines",
+            "Dependencies",
+            "Progress tracker",
+            "Next actions"
+        ],
+        prompts: [
+            "What is the next milestone?",
+            "Which task is blocking progress?",
+            "What should be completed next?"
+        ]
+    },
+
+    "Wedding Planner": {
+        sections: [
+            "Wedding priorities",
+            "Vendor checklist",
+            "Budget tracking",
+            "Guest list",
+            "Appointments",
+            "To-do list",
+            "Important deadlines"
+        ],
+        prompts: [
+            "What wedding task needs attention first?",
+            "Which vendor needs follow-up?",
+            "What decision needs to be made?"
+        ]
+    },
+
+    "Travel Planner": {
+        sections: [
+            "Destination overview",
+            "Itinerary",
+            "Places to visit",
+            "Reservations",
+            "Packing checklist",
+            "Budget",
+            "Travel notes"
+        ],
+        prompts: [
+            "What places do I want to visit?",
+            "What reservations need confirmation?",
+            "What should I pack?"
+        ]
+    },
+
+    "Reading Planner": {
+        sections: [
+            "Reading list",
+            "Current book",
+            "Reading goal",
+            "Pages or chapters",
+            "Favorite quotes",
+            "Book rating",
+            "Reading reflection"
+        ],
+        prompts: [
+            "What do I want to read next?",
+            "What did I enjoy about this book?",
+            "What idea stayed with me?"
+        ]
+    },
+
+    "Gratitude Journal": {
+        sections: [
+            "Things I am grateful for",
+            "Small moments",
+            "People I appreciate",
+            "Positive reflection",
+            "Daily intention"
+        ],
+        prompts: [
+            "What made today meaningful?",
+            "Who made a positive difference?",
+            "What small thing am I grateful for?"
+        ]
+    },
+
+    "Reflection Journal": {
+        sections: [
+            "Reflection",
+            "What went well",
+            "Challenges",
+            "Lessons learned",
+            "Emotions",
+            "Next steps"
+        ],
+        prompts: [
+            "What went well?",
+            "What did I learn?",
+            "What would I like to do differently?"
+        ]
+    },
+
+    "Mental Wellness Journal": {
+        sections: [
+            "Daily check-in",
+            "Mood reflection",
+            "Stress check",
+            "Rest and recovery",
+            "Positive moments",
+            "Supportive activities"
+        ],
+        prompts: [
+            "How am I feeling?",
+            "What has been taking up my mental space?",
+            "What supportive activity could I make time for?"
+        ]
+    },
+
+    "Digital Detox Planner": {
+        sections: [
+            "Screen-time intention",
+            "Offline activities",
+            "Digital boundaries",
+            "Focus periods",
+            "Reflection",
+            "Alternative activities"
+        ],
+        prompts: [
+            "What digital habit would I like to change?",
+            "What could I do instead?",
+            "When do I want to disconnect?"
+        ]
+    },
+
+    "Personal Growth Planner": {
+        sections: [
+            "Personal goals",
+            "Growth areas",
+            "Action steps",
+            "Learning goals",
+            "Habit development",
+            "Reflection",
+            "Next steps"
+        ],
+        prompts: [
+            "What area of my life do I want to develop?",
+            "What is one small action I can take?",
+            "What did I learn about myself?"
+        ]
+    }
+};
+
+
+// ============================================================
+// AUDIENCE INTELLIGENCE
+// ============================================================
+
+const audienceIntelligence = {
+
+    "Beginners": `
+Keep the content approachable and beginner-friendly.
+Avoid complicated terminology.
+Use simple instructions and clearly labeled sections.
+Prioritize achievable actions and easy-to-understand prompts.
+`,
+
+    "Fitness Beginners": `
+Keep fitness content approachable for beginners.
+Use simple planning concepts and avoid overly advanced workout terminology.
+Focus on consistency, preparation, recovery, and realistic progress tracking.
+`,
+
+    "Students": `
+Keep the structure organized and easy to scan.
+Prioritize deadlines, assignments, study sessions, and academic priorities.
+`,
+
+    "College Students": `
+Keep the design practical and space-efficient.
+Prioritize classes, deadlines, study sessions, personal tasks, and weekly priorities.
+`,
+
+    "Working Professionals": `
+Keep the planner polished and efficient.
+Prioritize schedules, deadlines, meetings, priorities, and concise task management.
+`,
+
+    "Entrepreneurs": `
+Focus on priorities, revenue-generating activities, customers, projects, marketing, and business development.
+`,
+
+    "Busy Moms": `
+Prioritize practical planning.
+Balance household responsibilities, personal needs, family activities, meals, errands, and self-care.
+`,
+
+    "Stay-at-Home Moms": `
+Balance household management, family responsibilities, meal planning, cleaning, errands, and personal time.
+`,
+
+    "Creatives": `
+Allow room for brainstorming and visual thinking.
+Include flexible idea areas and creative notes.
+`,
+
+    "Content Creators": `
+Prioritize content ideas, publishing schedules, platforms, creative production, and engagement tasks.
+`,
+
+    "Book Lovers": `
+Prioritize reading progress, books to read, notes, reflections, and favorite moments.
+`
+};
+
+
+// ============================================================
+// DENSITY INTELLIGENCE
+// ============================================================
+
+const densityInstructions = {
+
+    "Ultra-Minimal Density": `
+Keep the number of sections very limited.
+Prioritize generous whitespace and only the most important content.
+`,
+
+    "Minimal Density": `
+Keep the number of sections intentionally limited.
+Prioritize readability, generous spacing, and functional simplicity.
+`,
+
+    "Light Density": `
+Use a comfortable number of sections with plenty of breathing room.
+`,
+
+    "Balanced Density": `
+Balance useful content with comfortable spacing and visual breathing room.
+`,
+
+    "Moderate Density": `
+Include a moderate amount of useful information while maintaining readability.
+`,
+
+    "Moderately Dense": `
+Create a content-rich page while maintaining clear organization and comfortable spacing.
+`,
+
+    "High Density": `
+Maximize useful information while keeping the page organized and readable.
+`,
+
+    "Very High Density": `
+Create a highly content-rich dashboard while maintaining clear hierarchy and usable sections.
+`,
+
+    "Content-Rich": `
+Prioritize useful planner content and include multiple relevant sections without sacrificing readability.
+`,
+
+    "Compact Dashboard": `
+Use compact sections and efficient spacing to maximize useful content.
+`
+};
+
+
+// ============================================================
+// WRITING SPACE INTELLIGENCE
+// ============================================================
+
+const writingInstructions = {
+
+    "Minimal Writing Space": `
+Keep handwriting areas compact and prioritize trackers and structured inputs.
+`,
+
+    "Small Writing Areas": `
+Use small but practical writing spaces.
+`,
+
+    "Moderate Writing Space": `
+Provide moderate handwriting areas appropriate for short notes and reflections.
+`,
+
+    "Generous Writing Space": `
+Provide comfortable writing areas suitable for handwritten responses.
+`,
+
+    "Lots of Writing Space": `
+Prioritize generous writing areas.
+Do not sacrifice handwriting space for unnecessary decoration.
+`,
+
+    "Extra-Large Writing Areas": `
+Give major sections large, comfortable areas for handwriting.
+`,
+
+    "Writing-Focused Layout": `
+Prioritize large writing areas over decorative elements.
+`,
+
+    "Balanced Writing and Tracking": `
+Balance handwriting sections with compact trackers and structured inputs.
+`,
+
+    "Large Open Notes Section": `
+Include a clearly defined large open notes area.
+`
+};
+
+
+// ============================================================
+// CUSTOM DROPDOWNS
+// ============================================================
 
 Object.entries(options).forEach(([field, values]) => {
 
@@ -580,17 +1195,16 @@ Object.entries(options).forEach(([field, values]) => {
 });
 
 
-// ------------------------------
-// CUSTOM INPUTS
-// ------------------------------
+// ============================================================
+// CUSTOM INPUT HANDLING
+// ============================================================
 
 document.querySelectorAll("select").forEach(select => {
 
     select.addEventListener("change", () => {
 
-        const existing = document.getElementById(
-            `${select.id}-custom`
-        );
+        const existing =
+            document.getElementById(`${select.id}-custom`);
 
         if (existing) {
             existing.remove();
@@ -598,9 +1212,13 @@ document.querySelectorAll("select").forEach(select => {
 
         if (select.value === "Custom") {
 
-            const wrapper = document.createElement("div");
+            const wrapper =
+                document.createElement("div");
 
-            wrapper.className = "custom-input-wrapper";
+            wrapper.className =
+                "custom-input-wrapper";
+
+            wrapper.style.marginTop = "8px";
 
             wrapper.innerHTML = `
                 <input
@@ -618,23 +1236,24 @@ document.querySelectorAll("select").forEach(select => {
 });
 
 
-// ------------------------------
-// GET SELECTED VALUE
-// ------------------------------
+// ============================================================
+// GET VALUE
+// ============================================================
 
 function getValue(id) {
 
-    const select = document.getElementById(id);
+    const select =
+        document.getElementById(id);
 
     if (!select) return "";
 
     if (select.value === "Custom") {
 
-        const customInput =
+        const custom =
             document.getElementById(`${id}-custom`);
 
-        return customInput
-            ? customInput.value.trim()
+        return custom && custom.value.trim()
+            ? custom.value.trim()
             : "Custom";
     }
 
@@ -642,54 +1261,14 @@ function getValue(id) {
 }
 
 
-// ------------------------------
-// PRESET
-// ------------------------------
-
-const preset = document.getElementById("preset");
-
-preset.addEventListener("change", () => {
-
-    if (preset.value !== "elegantSunday") return;
-
-    document.getElementById("plannerTitle").value =
-        "Sunday Reset Planner";
-
-    document.getElementById("niche").value =
-        "General";
-
-    setValue("productFormat", "Single-Page Printable");
-    setValue("pageSize", "A5 Portrait");
-    setValue("plannerType", "Sunday Reset Planner");
-    setValue("plannerTimeframe", "Sunday Reset");
-    setValue("targetAudience", "Women");
-
-    setValue("layoutStyle", "Structured Dashboard");
-    setValue("pageComposition", "Mixed Cards Composition");
-    setValue("decorativeDensity", "Balanced Decorative Density");
-    setValue("graphicPlacement", "Mixed Graphic Placement");
-    setValue("graphicSize", "Small Accents");
-    setValue("contentCardStyle", "Rounded Pastel Cards");
-
-    setValue("overallAesthetic", "Elegant Luxury");
-    setValue("colourPalette", "Beige & Cream");
-    setValue("typography", "Elegant Serif");
-    setValue("graphicTheme", "Florals");
-    setValue("graphicStyle", "Sticker Style");
-    setValue("overallMood", "Gentle");
-
-    setValue("density", "Minimal Density");
-    setValue("writingSpace", "Lots of Writing Space");
-    setValue("boxStyle", "Rounded Boxes");
-    setValue("headerStyle", "Minimal Headers");
-
-    generatePrompt();
-});
-
+// ============================================================
+// SET VALUE
+// ============================================================
 
 function setValue(id, value) {
 
-    const select = document.getElementById(id);
+    const select =
+        document.getElementById(id);
 
     if (!select) return;
 
@@ -697,133 +1276,423 @@ function setValue(id, value) {
 }
 
 
-// ------------------------------
+// ============================================================
+// PRESET
+// ============================================================
+
+document.getElementById("preset")
+    .addEventListener("change", () => {
+
+        const preset =
+            document.getElementById("preset").value;
+
+        if (preset !== "elegantSunday") return;
+
+        document.getElementById("plannerTitle").value =
+            "Sunday Reset Planner";
+
+        document.getElementById("niche").value =
+            "General";
+
+        setValue("productFormat",
+            "Single-Page Printable");
+
+        setValue("pageSize",
+            "A5 Portrait");
+
+        setValue("plannerType",
+            "Sunday Reset Planner");
+
+        setValue("plannerTimeframe",
+            "Sunday Reset");
+
+        setValue("targetAudience",
+            "Women");
+
+        setValue("layoutStyle",
+            "Structured Dashboard");
+
+        setValue("pageComposition",
+            "Mixed Cards Composition");
+
+        setValue("decorativeDensity",
+            "Balanced Decorative Density");
+
+        setValue("graphicPlacement",
+            "Mixed Graphic Placement");
+
+        setValue("graphicSize",
+            "Small Accents");
+
+        setValue("contentCardStyle",
+            "Rounded Pastel Cards");
+
+        setValue("overallAesthetic",
+            "Elegant Luxury");
+
+        setValue("colourPalette",
+            "Beige & Cream");
+
+        setValue("typography",
+            "Elegant Serif");
+
+        setValue("graphicTheme",
+            "Florals");
+
+        setValue("graphicStyle",
+            "Sticker Style");
+
+        setValue("overallMood",
+            "Gentle");
+
+        setValue("density",
+            "Minimal Density");
+
+        setValue("writingSpace",
+            "Lots of Writing Space");
+
+        setValue("boxStyle",
+            "Rounded Boxes");
+
+        setValue("headerStyle",
+            "Minimal Headers");
+
+        generatePrompt();
+
+    });
+
+
+// ============================================================
+// INTELLIGENCE ENGINE
+// ============================================================
+
+function getPlannerIntelligence(plannerType) {
+
+    if (plannerIntelligence[plannerType]) {
+        return plannerIntelligence[plannerType];
+    }
+
+    return {
+        sections: [
+            "Main priorities",
+            "Task checklist",
+            "Progress tracker",
+            "Notes and reflection",
+            "Next steps"
+        ],
+
+        prompts: [
+            "What is most important?",
+            "What needs attention?",
+            "What is the next step?"
+        ]
+    };
+}
+
+
+function getAudienceInstructions(audience) {
+
+    return audienceIntelligence[audience] || `
+Make the content appropriate for the selected target audience.
+Keep instructions clear, useful, and relevant to their needs.
+`;
+}
+
+
+function getDensityInstructions(density) {
+
+    return densityInstructions[density] || `
+Maintain a balanced amount of content and whitespace.
+`;
+}
+
+
+function getWritingInstructions(writingSpace) {
+
+    return writingInstructions[writingSpace] || `
+Provide appropriately sized writing areas.
+`;
+}
+
+
+// ============================================================
+// SMART CONTENT GENERATOR
+// ============================================================
+
+function generateSmartContent() {
+
+    const plannerType =
+        getValue("plannerType");
+
+    const audience =
+        getValue("targetAudience");
+
+    const density =
+        getValue("density");
+
+    const writingSpace =
+        getValue("writingSpace");
+
+    const intelligence =
+        getPlannerIntelligence(plannerType);
+
+    const sections =
+        intelligence.sections
+            .map(section => `- ${section}`)
+            .join("\n");
+
+    const prompts =
+        intelligence.prompts
+            .map(prompt => `- ${prompt}`)
+            .join("\n");
+
+    return `
+SMART PLANNER CONTENT
+
+Based on the selected planner type, automatically include relevant functional content.
+
+Recommended sections:
+${sections}
+
+Suggested prompts:
+${prompts}
+
+AUDIENCE ADAPTATION
+
+${getAudienceInstructions(audience)}
+
+DENSITY ADAPTATION
+
+${getDensityInstructions(density)}
+
+WRITING SPACE ADAPTATION
+
+${getWritingInstructions(writingSpace)}
+`;
+}
+
+
+// ============================================================
 // GENERATE PROMPT
-// ------------------------------
+// ============================================================
 
 function generatePrompt() {
 
     const title =
-        document.getElementById("plannerTitle").value.trim()
+        document.getElementById("plannerTitle")
+            .value.trim()
         || "Untitled Planner";
 
     const niche =
-        document.getElementById("niche").value.trim()
+        document.getElementById("niche")
+            .value.trim()
         || "General";
 
     const additional =
         document.getElementById("additionalInstructions")
             .value.trim();
 
+    const plannerType =
+        getValue("plannerType")
+        || "Planner";
 
-    const prompt = `Create a single-page ${getValue("plannerType") || "planner"} for ${getValue("targetAudience") || "a general audience"} in the ${niche} niche.
+    const smartContent =
+        generateSmartContent();
+
+
+    const prompt = `Create a single-page ${plannerType} for ${getValue("targetAudience") || "a general audience"} in the ${niche} niche.
 
 Title: "${title}"
 
-Create exactly one finished printable page with a strong, content-rich dashboard composition. Build a clear visual hierarchy with a decorative title, subtitle, and organized content sections.
+Create exactly one finished printable page.
 
-Use ${getValue("contentCardStyle") || "well-organized content cards"}, tables, checklists, trackers, writing spaces, and prompts appropriate to the planner type.
+The page should function as a practical, content-rich planner rather than simply a decorative page.
 
-Design specifically for a ${getValue("pageSize") || "printable"}.
+Use the selected planner type to automatically determine the most useful sections, trackers, checklists, prompts, writing areas, and planning tools.
 
-PLANNER FOUNDATION
+${smartContent}
+
+DESIGN SPECIFICATIONS
 
 Product format: ${getValue("productFormat")}
+
+Page size: ${getValue("pageSize")}
+
 Planner type: ${getValue("plannerType")}
+
 Planner timeframe: ${getValue("plannerTimeframe")}
+
 Target audience: ${getValue("targetAudience")}
 
 PAGE DESIGN
 
 Layout style: ${getValue("layoutStyle")}
+
 Page composition: ${getValue("pageComposition")}
+
 Decorative density: ${getValue("decorativeDensity")}
+
 Graphic placement: ${getValue("graphicPlacement")}
+
 Graphic size: ${getValue("graphicSize")}
+
 Content card style: ${getValue("contentCardStyle")}
 
 DESIGN STYLE
 
 Overall aesthetic: ${getValue("overallAesthetic")}
+
 Colour palette: ${getValue("colourPalette")}
+
 Typography: ${getValue("typography")}
+
 Graphic theme: ${getValue("graphicTheme")}
+
 Style of graphics: ${getValue("graphicStyle")}
+
 Overall mood: ${getValue("overallMood")}
 
 LAYOUT SETTINGS
 
 Density: ${getValue("density")}
+
 Writing space: ${getValue("writingSpace")}
+
 Box style: ${getValue("boxStyle")}
+
 Header style: ${getValue("headerStyle")}
 
-COMPOSITION AND USABILITY
 
-Create a professionally balanced page composition.
+CONTENT INTELLIGENCE
 
-Avoid overcrowding the page.
+Automatically adapt the content to the selected planner type and audience.
+
+Do not blindly include every suggested section if doing so would overcrowd the page.
+
+Prioritize the most useful sections for the selected page size and density.
+
+If the page has limited space, combine related functions into compact cards.
+
+If generous writing space is selected, reduce decorative elements and give more area to handwriting.
+
+If minimal density is selected, prioritize only the highest-value sections.
+
+If content-rich density is selected, include more relevant planning tools while maintaining readability.
+
+
+VISUAL HIERARCHY
+
+Create a strong visual hierarchy with:
+
+- Decorative title
+- Clear subtitle
+- Organized section headings
+- Functional content cards
+- Checklists
+- Trackers
+- Writing spaces
+- Relevant prompts
+
+Vary card sizes and section layouts to create visual interest while maintaining balance.
+
+
+PRINTABILITY
+
+Use professional print margins suitable for home printing and binder use.
+
+Keep every element safely within the printable area.
+
+Avoid placing important text or graphics near the page edges.
+
+Use comfortably readable font sizes.
+
+Avoid shrinking text simply to fit more content.
+
+Prioritize usability over excessive content.
+
+
+COMPOSITION
+
+Avoid overcrowding.
 
 Avoid excessive empty space.
 
 Use proportional spacing between sections.
 
-Ensure writing areas are appropriately sized for their intended purpose.
-
-Writing sections should provide generous space for handwriting.
-
-Checklists, trackers, and rating scales should remain compact where appropriate.
-
-Use a clear visual hierarchy.
+Keep sections aligned and evenly distributed.
 
 Maintain comfortable spacing between headings, content, and decorative elements.
 
-Keep all content aligned and evenly distributed across the page.
-
 Do not reduce writing space in favor of unnecessary decorative elements.
 
-Use comfortable professional print margins suitable for home printing and binder use.
+Keep the page visually cohesive.
 
-Keep all content safely within the printable area and away from the page edges.
+Make sure decorative elements support the planner rather than interfere with usability.
 
-TYPOGRAPHY
-
-Use comfortably readable font sizes.
-
-Avoid overly small body text.
-
-Ensure section headings are clear and easy to identify.
-
-Avoid shrinking text simply to fit more content onto the page.
-
-Prioritize usability over fitting additional sections.
 
 GRAPHICS
 
-Use graphics that complement the selected ${getValue("graphicTheme")} theme.
+Use ${getValue("graphicTheme")} as the primary graphic theme.
 
-Keep graphics intentional and clearly visible.
+Use ${getValue("graphicStyle")} graphics.
 
-Use the selected ${getValue("graphicSize")} graphic sizing.
+Keep graphics ${getValue("graphicSize")}.
 
-Balance decorative elements with functional content.
+Use ${getValue("graphicPlacement")}.
 
-PRINT QUALITY
+Make decorative graphics intentional and clearly visible.
 
-Create a high-resolution printable specifically designed for professional PDF printing.
+Coordinate decorative elements with the selected ${getValue("colourPalette")} palette.
+
+
+TYPOGRAPHY
+
+Use ${getValue("typography")} typography.
+
+Create clear visual hierarchy between the title, section headings, labels, instructions, and body text.
+
+Keep body text comfortably readable.
+
+Do not use excessively decorative typography for functional information.
+
+
+FINAL OUTPUT
+
+Create exactly ONE finished printable page.
+
+Do not generate a cover.
+
+Do not generate a copyright page.
+
+Do not generate a welcome page.
+
+Do not generate a notes page unless it is specifically part of the selected planner content.
+
+Do not generate additional pages.
+
+Do not repeat the page.
+
+Create a polished, professional, editable printable design.
 
 Ensure crisp typography, clean lines, sharp illustrations, and excellent print clarity.
 
-Keep the entire design editable and professionally composed.
+${additional ? `
+ADDITIONAL USER INSTRUCTIONS
 
-Do not generate a cover, copyright page, welcome page, notes page, extra page, or repeating page.
+${additional}
+` : ""}
 
-${additional ? `ADDITIONAL USER INSTRUCTIONS
+Final priority order:
 
-${additional}` : ""}
-
-Final requirement: Create exactly one finished printable page. Prioritize usability, readability, balanced composition, generous writing space, and professional printable aesthetics.`;
-
+1. Planner usability
+2. Relevant planner content
+3. Readability
+4. Writing space
+5. Clear visual hierarchy
+6. Balanced composition
+7. Aesthetic styling
+8. Decorative elements
+`;
 
     document.getElementById("promptOutput").value =
         prompt.trim();
@@ -832,13 +1701,17 @@ Final requirement: Create exactly one finished printable page. Prioritize usabil
 }
 
 
-// ------------------------------
-// BUTTONS
-// ------------------------------
+// ============================================================
+// GENERATE BUTTON
+// ============================================================
 
 document.getElementById("generateBtn")
     .addEventListener("click", generatePrompt);
 
+
+// ============================================================
+// COPY BUTTON
+// ============================================================
 
 document.getElementById("copyBtn")
     .addEventListener("click", async () => {
@@ -850,27 +1723,40 @@ document.getElementById("copyBtn")
             generatePrompt();
         }
 
-        await navigator.clipboard.writeText(
-            document.getElementById("promptOutput").value
-        );
+        try {
 
-        const button =
-            document.getElementById("copyBtn");
+            await navigator.clipboard.writeText(
+                document.getElementById("promptOutput").value
+            );
 
-        const original = button.textContent;
+            const button =
+                document.getElementById("copyBtn");
 
-        button.textContent = "✓ Copied!";
+            const original =
+                button.textContent;
 
-        setTimeout(() => {
-            button.textContent = original;
-        }, 1500);
+            button.textContent =
+                "✓ Copied!";
+
+            setTimeout(() => {
+                button.textContent =
+                    original;
+            }, 1500);
+
+        } catch (error) {
+
+            alert(
+                "Copy failed. Please select the prompt and copy it manually."
+            );
+
+        }
 
     });
 
 
-// ------------------------------
+// ============================================================
 // RESET
-// ------------------------------
+// ============================================================
 
 document.getElementById("resetBtn")
     .addEventListener("click", () => {
@@ -882,6 +1768,7 @@ document.getElementById("resetBtn")
 
         document.querySelectorAll("select")
             .forEach(select => {
+
                 select.selectedIndex = 0;
 
                 const custom =
@@ -892,18 +1779,20 @@ document.getElementById("resetBtn")
                 if (custom) {
                     custom.remove();
                 }
+
             });
 
-        document.getElementById("promptOutput").value = "";
+        document.getElementById("promptOutput")
+            .value = "";
 
         updateCharacterCount();
 
     });
 
 
-// ------------------------------
+// ============================================================
 // CHARACTER COUNT
-// ------------------------------
+// ============================================================
 
 document.getElementById("promptOutput")
     .addEventListener("input", updateCharacterCount);
@@ -917,12 +1806,11 @@ function updateCharacterCount() {
     document.getElementById("characterCount")
         .textContent =
         `${output.value.length.toLocaleString()} characters`;
-
 }
 
 
-// ------------------------------
-// INITIAL PROMPT
-// ------------------------------
+// ============================================================
+// INITIAL STATE
+// ============================================================
 
 generatePrompt();
