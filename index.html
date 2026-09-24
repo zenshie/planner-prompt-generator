@@ -1,1 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Planner Prompt Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="app-header">
+        <div>
+            <p class="eyebrow">PRINTABLE DESIGN TOOL</p>
+            <h1>Planner Prompt Studio</h1>
+            <p class="subtitle">
+                Build detailed prompts for beautiful printable planners.
+            </p>
+        </div>
+
+        <div class="header-badge">
+            ✦ Free Prompt Generator
+        </div>
+    </header>
+
+
+    <main class="workspace">
+
+        <!-- SETTINGS PANEL -->
+        <section class="settings-panel">
+
+            <!-- BASIC INFORMATION -->
+            <div class="section">
+
+                <div class="section-heading">
+                    <span>01</span>
+                    <div>
+                        <h2>Basic Information</h2>
+                        <p>Define the planner you want to create.</p>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="plannerTitle">Planner Title</label>
+                    <input
+                        type="text"
+                        id="plannerTitle"
+                        placeholder="e.g. Sunday Reset Planner"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="niche">Niche</label>
+                    <input
+                        type="text"
+                        id="niche"
+                        placeholder="e.g. General, Fitness, Wellness"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="preset">Preset</label>
+                    <select id="preset">
+                        <option value="">Choose a preset...</option>
+                        <option value="elegantSunday">Elegant Sunday Reset</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- PLANNER FORMAT -->
+            <div class="section">
+
+                <div class="section-heading">
+                    <span>02</span>
+                    <div>
+                        <h2>Planner Format</h2>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="productFormat">Product Format</label>
+                    <select id="productFormat"></select>
+                </div>
+
+                <div class="field">
+                    <label for="pageSize">Page Size</label>
+                    <select id="pageSize"></select>
+                </div>
+
+            </div>
+
+
+            <!-- PLANNER FOUNDATION -->
+            <div class="section">
+
+                <div class="section-heading">
+                    <span>03</span>
+                    <div>
+                        <h2>Planner Foundation</h2>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="plannerType">Planner Type</label>
+                    <select id="plannerType"></select>
+                </div>
+
+                <div class="field">
+                    <label for="plannerTimeframe">Planner Timeframe</label>
+                    <select id="plannerTimeframe"></select>
+                </div>
+
+                <div class="field">
+                    <label for="targetAudience">Target Audience</label>
+                    <select id="targetAudience"></select>
+                </div>
+
+            </div>
+
+
+            <!-- PAGE DESIGN -->
+            <div class="section">
+
+                <div class="section-heading">
+                    <span>04</span>
+                    <div>
+                        <h2>Page Design</h2>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="layoutStyle">Layout Style</label>
+                    <select id="layoutStyle"></select>
+                </div>
+
+                <div class="field">
+                    <label for="pageComposition">Page Composition</label>
+                    <select id="pageComposition"></select>
+                </div>
+
+                <div class="field">
+                    <label for="decorativeDensity">Decorative Density</label>
+                    <select id="decorativeDensity"></select>
+                </div>
+
+                <div class="field">
+                    <label for="graphicPlacement">Graphic Placement</label>
+                    <select id="graphicPlacement"></select>
+                </div>
+
+                <div class="field">
+                    <label for="graphicSize">Graphic Size</label>
+                    <select id="graphicSize"></select>
+                </div>
+
+                <div class="field">
+                    <label for="contentCardStyle">Content Card Style</label>
+                    <select id="contentCardStyle"></select>
+                </div>
+
+            </div>
+
+
+            <!-- DESIGN STYLE -->
+            <div class="section">
+
+                <div class="section-heading">
+                    <span>05</span>
+                    <div>
+                        <h2>Design Style</h2>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="overallAesthetic">Overall Aesthetic</label>
+                    <select id="overallAesthetic"></select>
+                </div>
+
+                <div class="field">
+                    <label for="colourPalette">Colour Palette</label>
+                    <select id="colourPalette"></select>
+                </div>
+
+                <div class="field">
+                    <label for="typography">Typography</label>
+                    <select id="typography"></select>
+                </div>
+
+                <div class="field">
+                    <label for="graphicTheme">Graphic Theme</label>
+                    <select id="graphicTheme"></select>
+                </div>
+
+                <div class="field">
+                    <label for="graphicStyle">Style of Graphics</label>
+                    <select id="graphicStyle"></select>
+                </div>
+
+                <div class="field">
+                    <label for="overallMood">Overall Mood</label>
+                    <select id="overallMood"></select>
+                </div>
+
+            </div>
+
+
+            <!-- LAYOUT SETTINGS -->
+            <div class="section">
+
+                <div class="section-heading">
+                    <span>06</span>
+                    <div>
+                        <h2>Layout Settings</h2>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="density">Density</label>
+                    <select id="density"></select>
+                </div>
+
+                <div class="field">
+                    <label for="writingSpace">Writing Space</label>
+                    <select id="writingSpace"></select>
+                </div>
+
+                <div class="field">
+                    <label for="boxStyle">Box Style</label>
+                    <select id="boxStyle"></select>
+                </div>
+
+                <div class="field">
+                    <label for="headerStyle">Header Style</label>
+                    <select id="headerStyle"></select>
+                </div>
+
+            </div>
+
+
+            <!-- EXTRA INSTRUCTIONS -->
+            <div class="section">
+
+                <div class="section-heading">
+                    <span>07</span>
+                    <div>
+                        <h2>Additional Instructions</h2>
+                        <p>Optional instructions for your generated prompt.</p>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <textarea
+                        id="additionalInstructions"
+                        rows="5"
+                        placeholder="Example: Include a water tracker, gratitude section, and weekly priorities."
+                    ></textarea>
+                </div>
+
+            </div>
+
+
+            <div class="actions">
+                <button id="generateBtn" class="primary-btn">
+                    ✦ Generate Prompt
+                </button>
+
+                <button id="resetBtn" class="secondary-btn">
+                    Reset
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- PREVIEW PANEL -->
+        <section class="preview-panel">
+
+            <div class="preview-header">
+
+                <div>
+                    <p class="eyebrow">GENERATED PROMPT</p>
+                    <h2>Your Canva Prompt</h2>
+                </div>
+
+                <button id="copyBtn" class="copy-btn">
+                    Copy Prompt
+                </button>
+
+            </div>
+
+
+            <textarea
+                id="promptOutput"
+                placeholder="Your generated prompt will appear here..."
+            ></textarea>
+
+
+            <div class="preview-footer">
+                <span id="characterCount">0 characters</span>
+
+                <span>
+                    ✦ Ready for ChatGPT
+                </span>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
